@@ -1,0 +1,31 @@
+<% provide(:title, 'All Existing Inventory Items') %>
+<div class="row">
+  <div class="span10">
+    <table class="table">
+    	<thead>
+    		<tr>
+    			<th>Asset Tag</th>
+    			<th>Date Purchased</th>
+    			<th>Current Location</th>
+    			<th>Make</th>
+				<th>Model</th>
+				<th>Name</th>
+				<th>Current Billable Project</th>
+			</tr>
+		</thead>
+		<tbody>	
+        <% @inventoryitems.each do |item| %>
+   			<tr>
+   				<td><%=item.asset_tag %></td>
+   				<td><%=item.date_purchased %></td>
+   				<td><%=item.location %></td>
+   				<td><%=item.make %></td>
+   				<td><%=item.model %></td>
+   				<td><%=item.name %></td>
+   				<td><%=item.project_id %></td>
+   			</tr>
+   		<% end %>
+	    </tbody>
+	</table>
+  </div>
+</div>

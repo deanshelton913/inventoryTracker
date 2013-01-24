@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  make: MyString
+  model: MyString
+  asset_tag: 1
+  project_id: 1
+  location: MyString
+  cost: 1.5
+  date_purchased: 2013-01-23 12:32:26
+
+two:
+  name: MyString
+  make: MyString
+  model: MyString
+  asset_tag: 1
+  project_id: 1
+  location: MyString
+  cost: 1.5
+  date_purchased: 2013-01-23 12:32:26
