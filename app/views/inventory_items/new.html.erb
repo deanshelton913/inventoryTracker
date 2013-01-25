@@ -7,6 +7,8 @@
 
 		<%= f.label :name %>
 		<%= f.text_field :name, :value => @inventoryitem[:name] %>
+		
+		<%= select("inventory_item", "emplopyee_id", Employee.all.collect {|employee| [ "#{employee.first_name} #{employee.last_name}", employee.id ] }, {:include_blank => 'Assign Item to Someone'})%>
 
 		<%= f.label :asset_tag %>
 		<%= f.text_field :asset_tag, :value => @inventoryitem[:asset_tag] %>
@@ -28,8 +30,11 @@
 
 		<%= f.label :project_id %>
 		<%= f.text_field :project_id, :value => @inventoryitem[:project_id] %>
-
-		<%= f.submit "Add new Item", class: "btn btn-large btn-primary" %>
+		<div class="row">
+			<div class="span6">
+				<%= f.submit "Add New Item", class: "btn btn-large btn-primary" %>
+			</div>
+		</div>
 		<% end %>
 	</div>
 </div>
