@@ -1,12 +1,29 @@
-<% if @inventoryitem.errors.any? %>
-<div id="error_explanation">
-	<div class="alert alert-error">
-		The form contains <%= pluralize(@inventoryitem.errors.count, "error") %>.
+<% unless @inventoryitem.nil? %>
+	<% if @inventoryitem.errors.any? %>
+	<div id="error_explanation">
+		<div class="alert alert-error">
+			The form contains <%= pluralize(@inventoryitem.errors.count, "error") %>.
+		</div>
+		<ul>
+			<% @inventoryitem.errors.full_messages.each do |msg| %>
+				<li>* <%= msg %></li>
+			<% end %>
+		</ul>
 	</div>
-	<ul>
-		<% @inventoryitem.errors.full_messages.each do |msg| %>
-			<li>* <%= msg %></li>
-		<% end %>
-	</ul>
-</div>
+	<% end %>
+<% end %>
+
+<% unless @employee.nil? %>
+	<% if @employee.errors.any? %>
+	<div id="error_explanation">
+		<div class="alert alert-error">
+			The form contains <%= pluralize(@employee.errors.count, "error") %>.
+		</div>
+		<ul>
+			<% @employee.errors.full_messages.each do |msg| %>
+				<li>* <%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
 <% end %>
