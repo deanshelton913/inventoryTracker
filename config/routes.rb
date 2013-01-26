@@ -1,6 +1,7 @@
 InventoryTracking::Application.routes.draw do
   resources :inventory_items  
   resources :employees  
+  resources :projects  
   root :to => 'static_pages#home'
 
   # The priority is based upon order of creation:

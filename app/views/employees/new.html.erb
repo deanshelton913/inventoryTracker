@@ -16,8 +16,11 @@
 
 		<%= f.label :phone %>
 		<%= f.text_field :phone, :value => @employee[:phone] %>
-
-		<%= f.submit "Add New Employee", class: "btn btn-large btn-primary" %>
+		<div class="row">
+			<div class="span6">
+				<%= f.submit "Add New Employee", class: "btn btn-large btn-primary" %>
+			</div>
+		</div>
 		<% end %>
 	</div>
 </div>

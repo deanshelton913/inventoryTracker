@@ -1,6 +1,7 @@
 class InventoryItem < ActiveRecord::Base
 	belongs_to :employee
-  	attr_accessible :asset_tag, :cost, :date_purchased, :location, :make, :model, :name, :project_id
+	belongs_to :project
+  	attr_accessible :asset_tag, :cost, :date_purchased, :location, :make, :model, :name, :project_id, :employee_id
   	validates :name, :presence => true
 	validates :cost, :presence => true
 	validates :date_purchased, :presence => true

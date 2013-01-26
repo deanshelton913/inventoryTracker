@@ -149,7 +149,10 @@ aside {
   @extend .control-group;
   @extend .error;
  }
-
+/* form */
+.add-on{
+  margin-left: -5px;
+}
 /* miscellaneous */
 
 .debug_dump {

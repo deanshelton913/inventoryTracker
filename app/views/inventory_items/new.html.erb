@@ -5,28 +5,34 @@
 		<%= form_for(@inventoryitem) do |f| %>
 		<%= render 'shared/error_messages' %>
 
-		<%= f.label :name %>
-		<%= f.text_field :name, :value => @inventoryitem[:name] %>
+		<%= f.label :employee, 'Item Type' %>
+		<%= f.text_field :name, :value => @inventoryitem[:name], :placeholder => "e.g.: Laptop, or Monitor" %>
 		
-		<%= select("inventory_item", "emplopyee_id", Employee.all.collect {|employee| [ "#{employee.first_name} #{employee.last_name}", employee.id ] }, {:include_blank => 'Assign Item to Someone'})%>
+		<%= f.label :employee %>
+		<%= select(
+		"inventory_item", 
+		"employee_id", 
+		Employee.find(:all, :order => "last_name").collect {|employee| [ "#{employee.first_name} #{employee.last_name}", employee.id ] }, 
+		{:include_blank => 'Assign Item to Someone'}
+		)%>
 
 		<%= f.label :asset_tag %>
-		<%= f.text_field :asset_tag, :value => @inventoryitem[:asset_tag] %>
+		<%= f.text_field :asset_tag, :value => @inventoryitem[:asset_tag], :placeholder => "Alpha-numeric ID for this item" %>
 
 		<%= f.label :make %>
-		<%= f.text_field :make, :value => @inventoryitem[:make] %>
+		<%= f.text_field :make, :value => @inventoryitem[:make], :placeholder => "e.g.: Apple, or Acer" %>
 
 		<%= f.label :model %>
-		<%= f.text_field :model, :value => @inventoryitem[:model] %>
+		<%= f.text_field :model, :value => @inventoryitem[:model], :placeholder => "e.g.: MacBookPro, or V243HQ" %>
 
 		<%= f.label :cost %>
-		<%= f.text_field :cost, :value => @inventoryitem[:cost] %>
+		<%= f.text_field :cost, :value => @inventoryitem[:cost], :placeholder => "Cost in USD. e.g.: 1100.39" %>
 
 		<%= f.label :date_purchased %>
-		<%= f.text_field :date_purchased, :value => @inventoryitem[:date_purchased] %>
+		<%= f.text_field :date_purchased, :value => @inventoryitem[:date_purchased], :placeholder => "Today would be: #{DateTime.now.strftime('%m/%d/%Y')}" %>
 
 		<%= f.label :location %>
-		<%= f.text_field :location, :value => @inventoryitem[:location] %>
+		<%= f.text_field :location, :value => @inventoryitem[:location], :placeholder => "e.g.: VMC HQ"  %>
 
 		<%= f.label :project_id %>
 		<%= f.text_field :project_id, :value => @inventoryitem[:project_id] %>
